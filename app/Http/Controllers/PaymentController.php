@@ -8,6 +8,7 @@ use App\Exceptions\InvalidRequestException;
 use Carbon\Carbon;
 use Endroid\QrCode\QrCode;
 use App\Events\OrderPaid;
+use Illuminate\Support\Facades\Log;
 
 class PaymentController extends Controller
 {
@@ -42,7 +43,7 @@ class PaymentController extends Controller
     public function alipayNotify()
     {
         // 校验输入参数
-        $data  = app('alipay')->verify();
+        $data = app('alipay')->verify();
         // 如果订单状态不是成功或者结束，则不走后续的逻辑
         // 所有交易状态：https://docs.open.alipay.com/59/103672
         if(!in_array($data->trade_status, ['TRADE_SUCCESS', 'TRADE_FINISHED'])) {
@@ -147,7 +148,7 @@ class PaymentController extends Controller
 
         return app('wechat_pay')->success();
     }
-    
+
     protected function afterPaid(Order $order)
     {
         event(new OrderPaid($order));
