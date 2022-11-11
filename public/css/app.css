@@ -15726,39 +15726,25 @@ body {
   color: #666;
 }
 
-.products-index-page .filters,
-.products-favorites-page .filters {
+.products-index-page .filter,
+.products-favorites-page .filter {
+  border: 1px red solid;
   font-size: 12px;
-  margin-bottom: 10px;
+  padding: 2px 0 2px 2px;
 }
 
-.products-index-page .filters > .row,
-.products-favorites-page .filters > .row {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  margin: 0 -20px;
+.products-index-page .filter .filter-value,
+.products-favorites-page .filter .filter-value {
+  color: red;
 }
 
-.products-index-page .filters > .row .filter-key,
-.products-favorites-page .filters > .row .filter-key {
-  width: 150px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background: #f3f3f3;
-  color: #666;
-}
-
-.products-index-page .filters > .row .filter-values,
-.products-favorites-page .filters > .row .filter-values {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.products-index-page .filters > .row .filter-values a,
-.products-favorites-page .filters > .row .filter-values a {
-  margin-right: 50px;
-  color: #666;
+.products-index-page .filter .remove-filter,
+.products-favorites-page .filter .remove-filter {
   text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: red;
+  padding: 2px;
 }
 
 .products-show-page .cover {
